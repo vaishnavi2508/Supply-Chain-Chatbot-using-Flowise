@@ -158,3 +158,57 @@ The average defect rate for the Packaging Materials category (0.89%) does not ex
 
 ---
 
+# 🚀 Future Improvements
+
+## ✨ Better Prompt Engineering
+
+The chatbot currently provides relevant answers from the uploaded documents, but the response formatting can be improved further to make answers more structured and closer to expected policy-based outputs.
+
+A better prompt can help:
+- improve answer consistency
+- reduce unnecessary text
+- provide cleaner supplier and policy references
+- generate more structured outputs
+
+### 📌 Example Prompt Improvement
+
+```text
+You are a Supply Chain Governance Assistant.
+
+Instructions:
+- Answer only from the uploaded documents.
+- Keep responses short and structured.
+- Mention supplier names clearly.
+- Include policy references when available.
+- Avoid assumptions or unrelated information.
+```
+
+This would help generate more accurate and better formatted responses.
+
+---
+
+## 📊 Pinecone Index & Report Management
+
+Another improvement would be maintaining better Pinecone index monitoring and reporting.
+
+Possible enhancements:
+- tracking uploaded document chunks
+- monitoring vector indexing status
+- improving chunk configurations
+- reducing duplicate or irrelevant chunks
+- improving retrieval accuracy
+
+This can help improve chatbot performance and maintain better search quality over time.
+
+---
+
+## ⚡ Additional Improvements
+
+- Better chunking strategy for structured retrieval
+- Metadata filtering support
+- Improved response formatting
+- Source references in chatbot responses
+- Better retrieval ranking
+- Basic analytics dashboard for supplier insights
+
+
