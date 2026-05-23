@@ -1,83 +1,60 @@
-# SCM Assistant - Supply Chain RAG Chatbot
+# 🚚 SCM Assistant - Supply Chain RAG Chatbot
 
-## Public Chatbot URL
+An AI-powered Supply Chain Management Assistant built using **Flowise AI**, **Groq**, **Pinecone**, and **HuggingFace Embeddings**.
 
-https://cloud.flowiseai.com/chatbot/535b01ae-a5fe-4766-90f1-845741d73664
-
----
-
-## Overview
-
-SCM Assistant is a Retrieval-Augmented Generation (RAG) chatbot built using Flowise AI.  
-The chatbot answers questions related to supplier governance, supplier performance, disruption risks, compliance rules, and procurement policies using the provided CSV and PDF datasets.
+The chatbot uses Retrieval-Augmented Generation (RAG) to answer supplier governance, disruption risk, compliance, and procurement policy related questions from uploaded enterprise documents.
 
 ---
 
-## Tech Stack
+# 🔗 Public Chatbot URL
 
-- Flowise AI
-- Pinecone Vector Database
-- Groq LLM Connector
-- HuggingFace Embeddings
+👉 https://cloud.flowiseai.com/chatbot/535b01ae-a5fe-4766-90f1-845741d73664
 
-### LLM Used
-- `llama-3.3-70b-versatile`
+---
+
+# 🛠️ Tech Stack
+
+| Component | Technology |
+|---|---|
+| Framework | Flowise AI |
+| LLM | Groq (`llama-3.3-70b-versatile`) |
+| Embeddings | `sentence-transformers/all-MiniLM-L6-v2` |
+| Vector Database | Pinecone |
+| Similarity Search | Cosine Similarity |
+
+---
+
+# ⚙️ Model Configuration
+
+## 🤖 LLM Configuration
+- Model: `llama-3.3-70b-versatile`
 - Temperature: `0.9`
 
-### Embedding Model Used
-- `sentence-transformers/all-MiniLM-L6-v2`
+## 🧠 Embedding Configuration
+- Model: `sentence-transformers/all-MiniLM-L6-v2`
+
+## 🗂️ Pinecone Configuration
+- Vector Type: `Dense`
+- Dimension: `384`
+- Metric: `Cosine`
 
 ---
 
-## Data Sources
+# ✂️ Chunking Experiments
 
-### 1. supplier_performance_data.csv
-Contains:
-- Supplier performance metrics
-- On-time delivery rates
-- Defect rates
-- Compliance scores
-- Disruption flags
-- Purchase order values
-- Supplier tier information
+## 📄 CSV Configuration
+- Chunking Strategy: Default Row-wise Chunking
+- Total Chunks Generated: `2000`
 
-### 2. SupplyChain_Governance_Policy_v3.2.pdf
-Contains:
-- Supplier governance policies
-- SLA thresholds
-- Risk management procedures
-- Audit rules
-- Diversification rules
-- Disruption response policies
-
----
-
-## Vector Database Configuration
-
-### Pinecone Configuration
-- Vector Type: Dense
-- Dimension: 384
-- Similarity Metric: Cosine
-
----
-
-## Chunking Experiments
-
-### Configuration 1 (Final Configuration Used)
-
-#### CSV Configuration
-- Default row-wise chunking
-- Total Chunks: `2000`
-
-#### PDF Configuration
-- Text Splitter: Token Text Splitter
+## 📘 PDF Configuration
+- Splitter: `Token Text Splitter`
 - Chunk Size: `500`
 - Chunk Overlap: `80`
-- Total Chunks: `13`
+- Total Chunks Generated: `13`
 
 ---
 
-## Chatflow Architecture
+# 🧩 Chatflow Architecture
 
 ```text
 Groq Chat Model
