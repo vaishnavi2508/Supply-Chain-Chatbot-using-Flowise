@@ -70,14 +70,30 @@ Pinecone Vector Store Retriever
 ## ❓ Q1. Which Tier-3 suppliers have an active disruption flag, and what response level applies per policy?
 
 **Answer:**  
-11 Tier-3 suppliers: Dravex Components India, Plataforma Metales SA, Maghreb Castworks, Helios Pack Greece, Cerromax Mineria, Orinoco Pack SAPI, Quetzal Textiles, Sibertek Molding, Archipelago PCB Corp, Varna Electronics EAD, Deltaforge Vietnam. All are High Risk with an active flag → Level 3 Activate per Policy §9 (CPO escalation + alternate supplier at minimum 40% volume).
+![Alt text](screenshots/q1_answer.png)
+
+```
+According to the provided context, there is no specific information about which Tier-3 suppliers have an active disruption flag. However, the policy states that when a supplier has an Active Disruption flag (non-None value in the Active_Disruptions field), the response tiers apply based on the supplier's risk level.
+
+For a High-Risk supplier with any disruption flag, or any supplier with two simultaneous disruption flags, the response level is Level 3 — Activate. This includes immediate escalation to CPO, activation of an alternate supplier for a minimum of 40% of the volume, and a safety stock adjustment of +50%.
+
+If a Tier-3 supplier falls under the disruption categories requiring a mandatory Level 3 response (export control restrictions, active labour strikes, regulatory enforcement actions, or port closure events exceeding 72 hours), the response level would be Level 3 — Activate, regardless of risk level. But specific Tier-3 suppliers are not mentioned.
+```
 
 ---
 
 ## ❓ Q2. Which suppliers qualify for the annual Volume Rebate Program and how many are there?
 
 **Answer:**  
-19 suppliers qualify: Borealis Composites, Crestline Chemical Supply, Fenwick Alloy Solutions, Hanguk Circuit Works, Hokkaido Alloy Tech, Krauss-Polymex GmbH, Lakeshore Components, Lumivex Semiconductor NL, Maplewood Polymer Corp, Norbec Alloy Works, Nordloom Finland Oy, Orrentek Precision Mfg, Ostwind Composites AG, PrecisionForge Taiyuan, Solveig Eco Packaging, Straits Packaging Hub, Tasman Circuit Boards, Toreval Electronics, Valdoro Special Alloys. Criteria (Policy §4.2): Tier-1 + OTD ≥ 93% + Defect < 0.5% + Sustainability Score ≥ 85.
+![Alt text](screenshots/q2_answer.png)
+
+```
+To qualify for the annual Volume Rebate Program, a supplier must be a Tier-1 supplier with an OTD (On-Time Delivery) rate at or above 93.0%, a Defect Rate below 0.5%, and a Sustainability Score at or above 85 for a full calendar year.
+
+Based on the provided context, none of the suppliers mentioned (SUP-113, Pinnacle Resin Co) meet the Tier-1 requirement, as they are both Tier-2 suppliers.
+
+Therefore, there are no suppliers in the provided context that qualify for the annual Volume Rebate Program.
+```
 
 ---
 
@@ -85,21 +101,60 @@ Pinecone Vector Store Retriever
 ## ❓ Q3. Which region has the highest total PO value, and does it breach the concentration limit?
 
 **Answer:**  
-11 Tier-3 suppliers: Dravex Components India, Plataforma Metales SA, Maghreb Castworks, Helios Pack Greece, Cerromax Mineria, Orinoco Pack SAPI, Quetzal Textiles, Sibertek Molding, Archipelago PCB Corp, Varna Electronics EAD, Deltaforge Vietnam. All are High Risk with an active flag → Level 3 Activate per Policy §9 (CPO escalation + alternate supplier at minimum 40% volume).
+![Alt text](screenshots/q3_answer.png)
+
+```
+Based on the provided context, we have PO values for three regions: EMEA (PO-10775) with a PO value of $31,598.92, and NA (PO-10339 and PO-10223) with PO values of $29,997.28 and $5,415.48 respectively.
+
+Total PO value for EMEA: $31,598.92
+Total PO value for NA: $29,997.28 + $5,415.48 = $35,412.76
+
+The NA region has the highest total PO value.
+
+The concentration limit is not explicitly defined in the provided context, but according to the initial document (doc id '0'), the volume allocation is set at a minimum of 40% and a maximum of 100% depending on disruption severity and CPO directive. However, this is related to volume allocation in the event of a disruption, not a concentration limit for PO value.
+
+Hmm, I'm not sure about the concentration limit breach as it's not clearly defined in the provided context.
+```
 
 ---
 
 ## ❓ Q4. Which suppliers are on Supplier Watch List (SWL) status and what does it restrict?
 
 **Answer:**  
-19 suppliers qualify: Borealis Composites, Crestline Chemical Supply, Fenwick Alloy Solutions, Hanguk Circuit Works, Hokkaido Alloy Tech, Krauss-Polymex GmbH, Lakeshore Components, Lumivex Semiconductor NL, Maplewood Polymer Corp, Norbec Alloy Works, Nordloom Finland Oy, Orrentek Precision Mfg, Ostwind Composites AG, PrecisionForge Taiyuan, Solveig Eco Packaging, Straits Packaging Hub, Tasman Circuit Boards, Toreval Electronics, Valdoro Special Alloys. Criteria (Policy §4.2): Tier-1 + OTD ≥ 93% + Defect < 0.5% + Sustainability Score ≥ 85.
+![Alt text](screenshots/q4_answer.png)
+
+```
+According to the provided context, a supplier with a Compliance Score below 60 is placed on Supplier Watch List (SWL) status, regardless of tier designation.
+
+One supplier, SUP-098 (Cobre del Sur SA), has a Compliance Score of 67, which is above the threshold of 60, but in another instance (doc id '2'), the same supplier has a Compliance Score of 90.
+
+However, I didn't find any supplier with a Compliance Score below 60 in the provided context.
+
+SWL status restricts new Purchase Order (PO) issuance to 20% of the prior quarter's volume.
+
+```
 
 ---
-## ❓ Which product category has the highest average defect rate and does it exceed the Tier-2 limit?
+## ❓ Q5. Which product category has the highest average defect rate and does it exceed the Tier-2 limit?
 
 
 **Answer:**  
-11 Tier-3 suppliers: Dravex Components India, Plataforma Metales SA, Maghreb Castworks, Helios Pack Greece, Cerromax Mineria, Orinoco Pack SAPI, Quetzal Textiles, Sibertek Molding, Archipelago PCB Corp, Varna Electronics EAD, Deltaforge Vietnam. All are High Risk with an active flag → Level 3 Activate per Policy §9 (CPO escalation + alternate supplier at minimum 40% volume).
+![Alt text](screenshots/q5_answer.png)
+
+```
+According to the provided context, the product categories mentioned are Packaging Materials.
+
+For the Packaging Materials category, we have the following defect rates:
+
+PO-10455: 1.47%
+PO-10223: 0.5%
+PO-11499: 0.7%
+To find the average defect rate, we calculate: (1.47 + 0.5 + 0.7) / 3 = 0.89%
+
+The Tier-2 maximum permissible defect rate is 2.50%.
+
+The average defect rate for the Packaging Materials category (0.89%) does not exceed the Tier-2 limit (2.50%).
+```
 
 ---
 
