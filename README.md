@@ -202,13 +202,5 @@ This can help improve chatbot performance and maintain better search quality ove
 
 ---
 
-## ⚡ Additional Improvements
-
-- Better chunking strategy for structured retrieval
-- Metadata filtering support
-- Improved response formatting
-- Source references in chatbot responses
-- Better retrieval ranking
-- Basic analytics dashboard for supplier insights
 
 
