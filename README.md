@@ -62,7 +62,7 @@ Groq Chat Model
 Conversational Retrieval QA Chain
         ↑
 Pinecone Vector Store Retriever
-
+```
 
 
 # ✅ Validation Questions & Answers
